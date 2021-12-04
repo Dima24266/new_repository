@@ -1,0 +1,24 @@
+ip = input('Введите ip адрес в формате a.a.a.a/b: ')
+ip = ip.strip().split('.')
+oct_1, oct_2, oct_3 = int(ip[0]), int(ip[1]), int(ip[2])
+oct_4 = int(ip[-1].strip().split('/')[0])
+mask =  int(ip[-1].strip().split('/')[1])
+template_ip = '{:<10}{:<10}{:<10}{:<10}'
+template_oct = '{:08b} {:08b} {:08b} {:08b}'
+mask_out = mask*'1' + (32-mask)*'0'
+mask1, mask2, mask3, mask4 = [mask_out[0:8], mask_out[8:16],
+                              mask_out[16:24], mask_out[24:32]]
+mask1_10, mask2_10, mask3_10, mask4_10 = [int(mask_out[0:8], 2), int(mask_out[8:16], 2),
+                                          int(mask_out[16:24], 2), int(mask_out[24:32], 2)]
+
+out_mask_10 = '{:<10}{:<10}{:<10}{:<10}'
+out_mask_2 = '{:10}{:10}{:10}{:10}'
+
+
+print('Network :' + '\n')
+print(template_ip.format(oct_1, oct_2, oct_3, oct_4))
+print(template_oct.format(oct_1, oct_2, oct_3, oct_4))
+print('Mask: ')
+print('/', mask, sep=" ")
+print(out_mask_10.format(mask1_10, mask2_10, mask3_10, mask4_10))
+print(out_mask_2.format(mask1, mask2, mask3, mask4))
