@@ -18,4 +18,4 @@ def generate_access_config(intf_vlan_mapping, access_template):
         print(i, end = '\n')
         print(*access_template, sep = '\n')
         access_template[1] = restr
-generate_access_config(access_config, access_mode_template)
+generate_access_config(access_config, access_mode_template, port_security_template)
