@@ -11,10 +11,10 @@ trunk_config = {
 def generate_access_config(access_config, access_template):
     for i in access_config.keys():
         restr = access_template[2]
-        access_template[2] += ' ' + str(access_config[i])
+        access_template[2] += ' ' + str(access_config[i]).strip("[]")
         print('interface ', end = '')
         print(i, end = '\n')
-        print(access_template[0], access_template[1], access_template[2].replace('[', '').replace(']', ''), sep = '\n')
+        print(*access_template, sep = '\n')
         access_template[2] = restr
         print()
 generate_access_config(trunk_config, trunk_mode_template)

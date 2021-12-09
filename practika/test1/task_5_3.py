@@ -6,9 +6,9 @@ access = {
 "5": "spanning-tree bpduguard enable"
 }
 trunk = {
-"1": "switchport trunk encapsulation dot1q",
-"2": "switchport mode trunk",
-"3": "switchport trunk allowed vlan "
+"switchport trunk encapsulation dot1q",
+"switchport mode trunk",
+"switchport trunk allowed vlan "
 }
 
 print('Введите режим работы интерфейса (access/trunk): ', end = '')
@@ -29,6 +29,6 @@ if mode == 'access':
     print(access["4"])
     print(access["5"])
 elif mode == 'trunk':
-    print(trunk["1"])
+    print(trunk[1])
     print(trunk["2"])
     print(trunk["3"], vlan)
