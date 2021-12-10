@@ -1,8 +1,6 @@
+b = input()
+b_device = b[0:2]
 d = []
-with open("sh_cdp_n_sw1.txt") as text:
-    ospf = text.readlines
-    print(ospf)
-    b_device = ospf[0:2]
 d.append(b_device)
 def parse_cdp_neighbors(command_output):
 
@@ -29,4 +27,4 @@ def parse_cdp_neighbors(command_output):
                 device = "".join(lines.split()[0])
                 eth_list = {b_device:local, device:port}
                 print(eth_list)
-parse_cdp_neighbors(ospf)
+parse_cdp_neighbors(b)
