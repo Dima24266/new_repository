@@ -29,6 +29,6 @@ if mode == 'access':
     print(access["4"])
     print(access["5"])
 elif mode == 'trunk':
-    print(trunk[1])
+    print(trunk["1"])
     print(trunk["2"])
     print(trunk["3"], vlan)
